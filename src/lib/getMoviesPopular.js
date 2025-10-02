@@ -1,6 +1,6 @@
 import get from "./axios.js";
 
-export const getPopular = (mediaType = "movie", pageNumber = 1) => {
+export const getMoviesPopular = (mediaType = "movie", pageNumber = 1) => {
   return get(`/${mediaType}/popular`, { page: pageNumber }).then(
     (data) => data.results
   );

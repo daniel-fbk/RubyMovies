@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { getPopular } from "../lib/getMoviesPopular.js";
+import { getMoviesPopular } from "../lib/getMoviesPopular.js";
 
-export const usePopularMovies = (mediaType = "movie", pageNumber = 1) =>
+export const useMoviesPopular = (mediaType = "movie", pageNumber = 1) =>
   useQuery({
-    queryKey: ["popular", mediaType, pageNumber],
-    queryFn: () => getPopular(mediaType, pageNumber),
+    queryKey: ["popularMovies", mediaType, pageNumber],
+    queryFn: () => getMoviesPopular(mediaType, pageNumber),
   });
