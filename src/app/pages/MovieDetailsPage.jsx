@@ -1,3 +1,8 @@
+import * as CONFIG from "../../lib/config.js";
+import { useMovieSearch } from "../../hooks/useMovieSearch.js";
+
+const { data: movies } = useMovieSearch(searchInput, "input");
+
 // import { useEffect, useState } from "react";
 // import { fetchMoviesPopular } from "../utility/fetchMoviesPopular.js";
 // import { fetchMovieDetails } from "../utility/fetchMovieDetails.js";

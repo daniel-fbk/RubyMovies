@@ -23,11 +23,9 @@ export const getBookmarks = () => {
   return movies;
 };
 
-export const saveFilters = (filters) =>
-  localStorage.setItem("filters", JSON.stringify(filters));
+export const saveFilters = (filters) => localStorage.setItem("filters", JSON.stringify(filters));
 
-export const getFilters = () =>
-  JSON.parse(localStorage.getItem("filters")) || { sortType: "" };
+export const getFilters = () => JSON.parse(localStorage.getItem("filters")) || { sortType: "" };
 
 export const bookmarkButton = (title, popularity) => {
   const bookmarkBtn = document.createElement("button");

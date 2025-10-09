@@ -21,10 +21,17 @@ main {
   margin-right: 50px;
 }
 
+.page-content-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 a {
   text-decoration: none;
   color: rgb(64, 119, 154);
 }
+
+/*--------------------Home Page--------------------*/
 
 .page-content {
   display: flex;
@@ -36,4 +43,44 @@ a {
   display: flex;
   gap: 5px;
   overflow-x: auto;
+}
+
+.poster-container {
+  width: 200px;
+}
+
+/*--------------------Search Results Page--------------------*/
+
+.search-movies-container {
+  border: 1px solid rgb(53, 53, 53);
+  border-radius: 5px;
+}
+
+.search-movie-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-poster-container {
+  border-radius: 12px;
+  width: 100px;
+  height: 80%;
+  margin: 0 15px 0 7px;
+  overflow: hidden;
+}
+
+.search-details {
+}
+
+.search-year {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.search-genres {
+  display: flex;
+}
+
+.search-genre:not(:last-child) {
+  margin-right: 10px;
 }

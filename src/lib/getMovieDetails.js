@@ -1,8 +1,5 @@
-import { renderPage } from "../utility/render.js";
+import get from "./axios.js";
 
-export const fetchMovieDetails = async (id) => {
-  const response = await fetch(`/api/movieDetailsApi?id=${id}`);
-  const data = await response.json();
-  const results = data;
-  renderPage(results);
+export const getMovieDetails = (mediaType = "movie", id) => {
+  return get(`/${mediaType}/${id}`).then((data) => data.results);
 };

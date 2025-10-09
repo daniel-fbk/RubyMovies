@@ -5,8 +5,7 @@ import { fetchMovieSearch } from "./fetchMovieSearch.js";
 const searchForm = document.getElementById("nav-search-form");
 const searchBar = document.getElementById("search-bar");
 const liveSearchDropdown = document.getElementById("live-search-dropdown");
-const imageNotFound = new URL("./public/imagenotfound.jpg", import.meta.url)
-  .href;
+const imageNotFound = new URL("./public/imagenotfound.jpg", import.meta.url).href;
 
 export const handleSearch = searchForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -56,12 +55,8 @@ const buildLiveSearch = async () => {
     suggestedPosterContainer.classList.add("suggested-poster-container");
 
     const suggestedPoster = document.createElement("img");
-    suggestedPoster.classList.add(
-      movie.poster_path ? "suggested-poster" : "suggested-poster-fallback"
-    );
-    suggestedPoster.src = movie.poster_path
-      ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
-      : imageNotFound;
+    suggestedPoster.classList.add(movie.poster_path ? "suggested-poster" : "suggested-poster-fallback");
+    suggestedPoster.src = movie.poster_path ? `https://image.tmdb.org/t/p/original${movie.poster_path}` : imageNotFound;
 
     const suggestedDetails = document.createElement("div");
     suggestedDetails.classList.add("suggested-details-container");
@@ -88,11 +83,7 @@ const buildLiveSearch = async () => {
 
     suggestedMovie.append(suggestedPosterContainer, suggestedDetails);
     suggestedPosterContainer.append(suggestedPoster);
-    suggestedDetails.append(
-      suggestedTitle,
-      suggestedReleaseYear,
-      actorsContainer
-    );
+    suggestedDetails.append(suggestedTitle, suggestedReleaseYear, actorsContainer);
     actorsContainer.append(suggestedActors);
 
     liveSearchDropdown.append(suggestedMovie);

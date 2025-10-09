@@ -6,21 +6,15 @@ const movieContainer = document.querySelector(".movie-container");
 
 export const buildPage = async (movie) => {
   const movieData = movie;
-  const time =
-    Math.floor(movieData.runtime / 60) + "h " + (movieData.runtime % 60) + "m";
+  const time = Math.floor(movieData.runtime / 60) + "h " + (movieData.runtime % 60) + "m";
   const { title, popularity } = movieData;
   movieContainer.replaceChildren();
 
   const movieImages = await fetchMovieImages(movieData.id);
   console.log(movieImages);
   const backgroundImage =
-    movieImages.backdrops.length > 0
-      ? movieImages.backdrops[0].file_path
-      : movieImages.posters[0].file_path;
-  wrapper.style.setProperty(
-    "--bg-url",
-    `url("https://image.tmdb.org/t/p/original${backgroundImage}")`
-  );
+    movieImages.backdrops.length > 0 ? movieImages.backdrops[0].file_path : movieImages.posters[0].file_path;
+  wrapper.style.setProperty("--bg-url", `url("https://image.tmdb.org/t/p/original${backgroundImage}")`);
 
   const posterContainer = document.createElement("div");
   const poster = document.createElement("img");
@@ -74,18 +68,8 @@ export const buildPage = async (movie) => {
   const genreYearAgeTime = document.createElement("div");
   genreYearAgeTime.classList.add("genre-year-age-time");
 
-  movieContainer.append(
-    posterContainer,
-    movieDetails,
-    bookmarkButton(title, popularity)
-  );
-  movieDetails.append(
-    movieTitle,
-    genreYearAgeTime,
-    description,
-    ratingContainer,
-    homePage
-  );
+  movieContainer.append(posterContainer, movieDetails, bookmarkButton(title, popularity));
+  movieDetails.append(movieTitle, genreYearAgeTime, description, ratingContainer, homePage);
   posterContainer.append(poster);
   ratingContainer.append(ratingStar, rating);
   genreYearAgeTime.append(genresContainer, releaseDate, ageRating, runTime);

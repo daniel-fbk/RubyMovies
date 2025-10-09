@@ -1,11 +1,6 @@
 import get from "./axios.js";
 
-export const getMoviesGenre = (
-  mediaType = "movie",
-  pageNumber = 1,
-  sortBy = "popularity.desc",
-  genre = null
-) => {
+export const getMoviesGenre = (mediaType = "movie", pageNumber = 1, sortBy = "popularity.desc", genre = null) => {
   return get(`/discover/${mediaType}`, {
     page: pageNumber,
     sort_by: sortBy,

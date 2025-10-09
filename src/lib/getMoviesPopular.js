@@ -1,9 +1,7 @@
 import get from "./axios.js";
 
 export const getMoviesPopular = (mediaType = "movie", pageNumber = 1) => {
-  return get(`/${mediaType}/popular`, { page: pageNumber }).then(
-    (data) => data.results
-  );
+  return get(`/${mediaType}/popular`, { page: pageNumber }).then((data) => data.results);
 };
 
 // export const fetchMoviesPopular = async () => {

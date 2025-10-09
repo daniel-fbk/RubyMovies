@@ -1,5 +1,6 @@
-import App from "./App.jsx";
-import HomePage from "./pages/HomePage.jsx";
+import App from "./App";
+import HomePage from "./pages/HomePage";
+import SearchResultsPage from "./pages/SearchResultsPage";
 
 const routes = [
   {
@@ -9,6 +10,10 @@ const routes = [
       {
         index: true,
         element: <HomePage></HomePage>,
+      },
+      {
+        path: "find/",
+        element: <SearchResultsPage />,
       },
     ],
   },
