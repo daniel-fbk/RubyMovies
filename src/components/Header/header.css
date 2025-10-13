@@ -3,6 +3,7 @@ header {
   align-items: center;
   justify-content: center;
   height: 75px;
+  z-index: 1000;
 }
 
 .header-content {
@@ -46,4 +47,8 @@ header {
 
 #home-name {
   font-size: 1.25rem;
+}
+
+#title-red {
+  color: rgb(222, 0, 0);
 }

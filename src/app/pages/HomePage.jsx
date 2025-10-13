@@ -4,6 +4,7 @@ import Poster from "../../components/Poster/Poster.jsx";
 import "../App.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
@@ -18,9 +19,11 @@ export default function HomePage() {
               <div className="movies-row">
                 {movies?.map((movie) => (
                   <SwiperSlide key={movie.id} style={{ width: "200px" }}>
-                    <div className="poster-container">
-                      <Poster movie={movie} size="medium" />
-                    </div>
+                    <Link to={`/movie/${movie.id}/${movie.title}`} className="search-movie-container">
+                      <div className="poster-container">
+                        <Poster movie={movie} size="medium" />
+                      </div>
+                    </Link>
                   </SwiperSlide>
                 ))}
               </div>

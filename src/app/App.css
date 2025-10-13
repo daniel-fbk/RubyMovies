@@ -21,7 +21,7 @@ main {
   margin-right: 50px;
 }
 
-.page-content-container {
+.content-container {
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -29,6 +29,21 @@ main {
 a {
   text-decoration: none;
   color: rgb(64, 119, 154);
+}
+
+h1,
+h3,
+p {
+  color: #f5f5f5;
+}
+
+#menu {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  list-style: none;
 }
 
 /*--------------------Home Page--------------------*/
@@ -46,25 +61,25 @@ a {
 }
 
 .poster-container {
-  width: 200px;
+  height: 270px;
 }
 
 /*--------------------Search Results Page--------------------*/
 
 .search-movies-container {
-  border: 1px solid rgb(53, 53, 53);
+  margin-top: 5rem;
   border-radius: 5px;
 }
 
 .search-movie-container {
   display: flex;
   align-items: center;
+  margin: 1rem 0;
 }
 
 .search-poster-container {
   border-radius: 12px;
-  width: 100px;
-  height: 80%;
+  height: 200px;
   margin: 0 15px 0 7px;
   overflow: hidden;
 }
@@ -83,4 +98,122 @@ a {
 
 .search-genre:not(:last-child) {
   margin-right: 10px;
+}
+
+/*--------------------Movie Details Page--------------------*/
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  z-index: -100;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.movie-details-container {
+  display: flex;
+  gap: 70px;
+  margin: 5em 0;
+  position: relative;
+}
+
+.poster-details-container {
+  height: 550px;
+  aspect-ratio: 2/3;
+  outline: solid 2px rgba(255, 255, 255, 0.247);
+  outline-offset: -2px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 0.4rem;
+}
+
+.movie-details-title {
+  font-size: 4rem;
+  font-weight: 450;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2), -1px -1px 2px rgba(0, 0, 0, 0.2);
+  text-wrap: balance;
+  padding-top: 3rem;
+}
+
+.genre-year-age-time {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0 3rem;
+}
+
+.genres-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-right: 2rem;
+  font-size: 0.875rem;
+}
+
+.genre {
+  background-color: rgb(33, 32, 32);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.description-details {
+  width: 75%;
+  line-height: 1.7rem;
+  color: #dbdbdb;
+}
+
+.release-date {
+  color: #dbdbdb;
+}
+
+.age-rating {
+  color: #dbdbdb;
+}
+
+.age-rating::before {
+  content: "•";
+  padding: 0 0.6rem;
+  font-size: 0.875rem;
+}
+
+.age-rating::after {
+  content: "•";
+  padding: 0 0.6rem;
+  font-size: 0.875rem;
+}
+
+.run-time {
+  color: #dbdbdb;
+}
+
+.rating-container {
+}
+
+.rating-star {
+}
+
+.rating {
 }

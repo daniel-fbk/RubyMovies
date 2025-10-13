@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { getMovieDetails } from "../lib/getMovieDetails";
+import { getMovieDetails } from "../lib/getMovieDetails.js";
 
-export const useMovieDetails = (mediaType = "movie", id) =>
+export const useMovieDetails = (id) =>
   useQuery({
-    queryKey: [mediaType, id],
-    queryFn: () => getMovieDetails(mediaType, id),
+    queryKey: [id],
+    queryFn: () => getMovieDetails(id),
     enabled: !!id,
   });
