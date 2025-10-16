@@ -14,19 +14,21 @@ export default function HomePage() {
 
         return (
           <div key={genre.id} className="movies-container">
-            <h2>{genre.name}</h2>
-            <Swiper slidesPerView={"auto"} spaceBetween={0} grabCursor={true}>
-              <div className="movies-row">
-                {movies?.map((movie) => (
-                  <SwiperSlide key={movie.id} style={{ width: "200px" }}>
-                    <Link to={`/movie/${movie.id}/${movie.title}`} className="search-movie-container">
-                      <div className="poster-container">
-                        <Poster movie={movie} size="medium" />
-                      </div>
-                    </Link>
-                  </SwiperSlide>
-                ))}
-              </div>
+            <Link to={genre.name}>
+              <h2>{genre.name}</h2>
+            </Link>
+
+            <Swiper slidesPerView={"auto"} spaceBetween={25} grabCursor={true}>
+              {movies?.map((movie) => (
+                <SwiperSlide key={movie.id} style={{ width: "180px" }}>
+                  <Link className="movie-card" to={`/movie/${movie.id}/${movie.title}`}>
+                    <div className="poster-container">
+                      <Poster movie={movie} size="medium" />
+                    </div>
+                    <h4>{movie.title}</h4>
+                  </Link>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         );

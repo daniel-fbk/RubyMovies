@@ -1,0 +1,38 @@
+.favorite-btn {
+  position: relative;
+}
+
+svg {
+  aspect-ratio: 1/1;
+  height: 17px;
+}
+
+.favorite-btn:hover .tooltip-target {
+  opacity: 1;
+}
+
+.tooltip-target {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.tooltip-target::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent;
+}

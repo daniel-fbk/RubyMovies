@@ -39,3 +39,7 @@ export const IMAGE_SIZE = {
   MEDIUM: IMAGE_BASE + "/w342",
   ORIGINAL: IMAGE_BASE + "/original",
 };
+
+export const FAVORITES_KEY = "favoriteMovies";
+
+export const FAVORITE_PAGE_LAYOUT = "favoritePageLayout";

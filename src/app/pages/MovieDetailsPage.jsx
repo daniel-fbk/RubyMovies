@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useMovieDetails } from "../../hooks/useMovieDetails";
 import Poster from "../../components/Poster/Poster";
+import FavoriteButton from "../../components/FavoriteButton/FavoriteButton";
 
 export default function MovieDetailsPage() {
   const { id } = useParams();
@@ -10,7 +11,8 @@ export default function MovieDetailsPage() {
   if (isError) return <p>Error loading movie</p>;
   if (!data) return <p>No movie found</p>;
 
-  const { backdrop_path, budget, genres, overview, popularity, poster_path, release_date, runtime, title } = data;
+  const { backdrop_path, budget, genres, overview, popularity, poster_path, release_date, runtime, title, homepage } =
+    data;
 
   const convertRuntime = Math.floor(runtime / 60) + "h " + (runtime % 60) + "m";
 
@@ -31,7 +33,7 @@ export default function MovieDetailsPage() {
             <div className="genre-year-age-time">
               <div className="genres-container">
                 {genres.map((genre) => (
-                  <p key={genre} className="genre">
+                  <p key={genre.id} className="genre">
                     {genre.name}
                   </p>
                 ))}
@@ -42,8 +44,16 @@ export default function MovieDetailsPage() {
             </div>
             <p className="description-details">{overview}</p>
             <div className="rating-container-deatils">
-              <img src="" alt="" className="rating-star-details" />
+              {/* <img src="" alt="" className="rating-star-details" /> */}
               <p className="rating-details"></p>
+            </div>
+            <div className="btn-container">
+              {homepage && (
+                <a className="homePage-btn" href={homepage} target="_blank">
+                  Home Page
+                </a>
+              )}
+              <FavoriteButton movie={data} />
             </div>
           </article>
         </section>

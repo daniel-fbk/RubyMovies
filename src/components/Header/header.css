@@ -10,7 +10,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 90%;
+  max-width: var(--max-width);
 }
 
 #header-bg {
@@ -45,8 +46,9 @@ header {
   color: #dae0e7;
 }
 
-#home-name {
-  font-size: 1.25rem;
+#home-name * {
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 #title-red {
