@@ -56,9 +56,9 @@ export default function SearchResultsPage() {
                           {genre_ids.map((id) => {
                             let genre = CONFIG.GENRE.find((g) => g.id === id);
                             return (
-                              <div className="search-genre" key={id}>
+                              <p className="search-genre" key={id}>
                                 {genre.name}
-                              </div>
+                              </p>
                             );
                           })}
                         </div>
@@ -71,7 +71,7 @@ export default function SearchResultsPage() {
             {isLoading ? (
               <p>Loading...</p>
             ) : (
-              <button type="button" className="load-more" onClick={() => setPage((prev) => prev + 1)}>
+              <button type="button" className="load-more-btn" onClick={() => setPage((prev) => prev + 1)}>
                 See more ▼
               </button>
             )}

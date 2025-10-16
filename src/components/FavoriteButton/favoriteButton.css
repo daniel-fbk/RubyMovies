@@ -17,7 +17,7 @@ svg {
   position: absolute;
   bottom: 150%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-75%);
   background-color: #333;
   text-align: center;
   padding: 10px 15px;
@@ -30,7 +30,7 @@ svg {
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: 75%;
   transform: translateX(-50%);
   border-width: 6px;
   border-style: solid;

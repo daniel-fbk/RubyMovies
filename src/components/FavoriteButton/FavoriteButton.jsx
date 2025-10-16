@@ -1,4 +1,4 @@
-import "./FavoriteButton.css";
+import "./favoriteButton.css";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import * as CONFIG from "../../lib/config";
 

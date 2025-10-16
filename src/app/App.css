@@ -1,5 +1,5 @@
 :root {
-  --base-bg: #000;
+  --base-bg: #000000;
   --base-white: #fff;
   --max-width: 1800px;
   --carousel_row-gap: 0.75rem;
@@ -21,13 +21,14 @@ body {
 }
 
 main {
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 .content-container {
-  max-width: 1280px;
+  padding: var(--first-child-margin) 0;
   margin: 0 auto;
+  max-width: 1280px;
 }
 
 a {
@@ -57,7 +58,7 @@ button {
   background-color: transparent;
   border: 2px solid #ffffff;
   max-width: fit-content;
-  padding: 4px;
+  padding: 0.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +70,7 @@ button {
 .page-content {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 3.125rem;
   max-width: var(--max-width);
 }
 
@@ -81,7 +82,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 0.3125rem;
   overflow-x: auto;
   padding: calc(var(--carousel_row-gap) / 2) calc(var(--carousel_col-gap) / 2);
 }
@@ -99,14 +100,15 @@ button {
 }
 
 .poster-container {
-  height: 270px;
+  height: 16.875rem;
 }
 
 /*--------------------Search Results Page--------------------*/
 
 .search-movies-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   margin-top: var(--first-child-margin);
-  border-radius: 5px;
 }
 
 .search-movie-container {
@@ -116,10 +118,12 @@ button {
 }
 
 .search-poster-container {
-  border-radius: 12px;
-  height: 200px;
-  margin: 0 15px 0 7px;
+  border-radius: 0.75rem;
+  height: 12.5rem;
+  margin-right: 0.9375rem;
   overflow: hidden;
+  outline: solid 2px rgba(255, 255, 255, 0.247);
+  outline-offset: -2px;
 }
 
 .search-details {
@@ -135,7 +139,11 @@ button {
 }
 
 .search-genre:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 0.625rem;
+}
+
+.load-more-btn {
+  margin: 2rem 0 5rem;
 }
 
 /*--------------------Movie Details Page--------------------*/
@@ -166,18 +174,18 @@ button {
 
 .movie-details-container {
   display: flex;
-  gap: 70px;
+  gap: 4.375rem;
   margin-top: var(--first-child-margin);
   position: relative;
 }
 
 .poster-details-container {
-  height: 550px;
+  height: 34.375rem;
   aspect-ratio: 2/3;
   outline: solid 2px rgba(255, 255, 255, 0.247);
   outline-offset: -2px;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  border-radius: 0.9375rem;
+  box-shadow: 0 0 1.5625rem rgba(0, 0, 0, 0.8);
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -191,7 +199,7 @@ button {
 .movie-details-title {
   font-size: 4rem;
   font-weight: 450;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2), -1px -1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.2), -0.0625rem -0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
   text-wrap: balance;
   padding-top: 3rem;
 }
@@ -205,7 +213,7 @@ button {
 .genres-container {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 0.625rem;
   padding-right: 2rem;
   font-size: 0.875rem;
 }
@@ -266,7 +274,7 @@ button {
   border: none;
   color: #000;
   background-color: #fff;
-  padding: 5px 10px;
+  padding: 0.3125rem 0.625rem;
 }
 
 /*--------------------User Favories Page--------------------*/
@@ -283,7 +291,7 @@ button {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, max-content);
+  grid-template-columns: repeat(4, max-content);
   justify-content: center;
   gap: 1rem;
   row-gap: 5rem;
@@ -297,6 +305,7 @@ button {
 .favorites-movie-container {
   position: relative;
   width: 333px;
+  aspect-ratio: 2/3;
 }
 
 .favorites-movie-container h3 {
@@ -309,7 +318,8 @@ button {
 }
 
 .favorites-poster-container {
-  height: 500px;
+  height: 100%;
+  width: 100%;
 }
 
 .fav-absolute {
@@ -317,4 +327,31 @@ button {
   right: 1rem;
   top: 1rem;
   opacity: 0;
+}
+
+@media (max-width: 1450px) {
+  .grid {
+    grid-template-columns: repeat(3, max-content);
+  }
+}
+
+@media (max-width: 1100px) {
+  html {
+    font-size: 15px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, max-content);
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(1, max-content);
+  }
 }

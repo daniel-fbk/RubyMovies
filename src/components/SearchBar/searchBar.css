@@ -4,7 +4,7 @@
 
 #search-bar {
   height: 2rem;
-  width: 36rem;
+  width: clamp(20rem, 35vw, 36rem);
   padding-left: 5px;
   font-size: 14px;
   border: none;
