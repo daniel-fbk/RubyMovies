@@ -109,6 +109,7 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-top: var(--first-child-margin);
+  justify-items: center;
 }
 
 .search-movie-container {
@@ -127,6 +128,7 @@ button {
 }
 
 .search-details {
+  width: 400px;
 }
 
 .search-year {
@@ -146,6 +148,12 @@ button {
   margin: 2rem 0 5rem;
 }
 
+@media (max-width: 1200px) {
+  .search-movies-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 /*--------------------Movie Details Page--------------------*/
 
 .background {
@@ -153,7 +161,7 @@ button {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -166,7 +174,7 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: -1;
@@ -175,7 +183,6 @@ button {
 .movie-details-container {
   display: flex;
   gap: 4.375rem;
-  margin-top: var(--first-child-margin);
   position: relative;
 }
 
@@ -328,6 +335,14 @@ button {
   top: 1rem;
   opacity: 0;
 }
+
+/*--------------------Genre Page--------------------*/
+
+.genre-title {
+  margin-top: var(--first-child-margin);
+}
+
+/*--------------------Breakpoints--------------------*/
 
 @media (max-width: 1450px) {
   .grid {
